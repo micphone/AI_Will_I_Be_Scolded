@@ -121,6 +121,7 @@ dmypy.json
 # Data files for AI projects
 *.csv
 *.pkl
+*.npy
 # Optionally exclude specific directories that contain large data files
 # data/
 # datasets/''
