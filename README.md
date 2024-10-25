@@ -24,3 +24,16 @@ This project is an AI application designed to predict whether a debunking video 
 4. Access the web interface at `http://localhost:5000/`.
 
 **Note:** Since the data and model files are not provided, you will need to supply your own dataset and retrain the model accordingly.
+
+## Training Data Format Requirements
+
+### CSV File
+- **Columns**:
+  - **文案内容 (Script Content)**: The text of the video script.
+  - **标签 (Label)**: The label indicating whether the script received negative feedback (被骂) or not (未被骂).
+
+### Consistency
+- Ensure that labels are consistent and only contain the specified categories.
+
+### Preprocessing
+- Data should be preprocessed appropriately before training, including steps such as tokenization and stopword removal.
