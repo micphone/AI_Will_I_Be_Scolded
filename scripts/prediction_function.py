@@ -5,12 +5,12 @@ from nltk.corpus import stopwords
 import numpy as np
 
 # 加载模型、向量化器和标签编码器
-best_model = joblib.load('sgd_model.pkl')
-vectorizer = joblib.load('vectorizer.pkl')
-le = joblib.load('label_encoder.pkl')
+best_model = joblib.load('../models/sgd_model.pkl')
+vectorizer = joblib.load('../models/vectorizer.pkl')
+le = joblib.load('../models/label_encoder.pkl')
 
 # 加载 classes
-classes = np.load('classes.npy')
+classes = np.load('../classes.npy')
 
 stop_words = set(stopwords.words('chinese'))
 
@@ -34,4 +34,4 @@ def update_model(text, true_label):
     # 更新模型
     best_model.partial_fit(text_vec, [true_label], classes=classes)
     # 保存更新后的模型
-    joblib.dump(best_model, 'sgd_model.pkl')
+    joblib.dump(best_model, '../models/sgd_model.pkl')

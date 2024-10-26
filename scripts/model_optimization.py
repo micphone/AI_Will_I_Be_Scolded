@@ -6,8 +6,8 @@ from sklearn.metrics import classification_report
 import joblib
 
 # 加载数据和向量化器
-data = pd.read_csv('processed_data.csv')
-vectorizer = joblib.load('vectorizer.pkl')
+data = pd.read_csv('../data/processed_data.csv')
+vectorizer = joblib.load('../models/vectorizer.pkl')
 
 X = data['processed_text']
 y = data['label']
@@ -32,4 +32,4 @@ y_pred_best = best_model.predict(X_test_vec)
 print(classification_report(y_test, y_pred_best))
 
 # 保存最佳模型
-joblib.dump(best_model, 'best_model.pkl')
+joblib.dump(best_model, '../models/best_model.pkl')

@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 
 # 加载数据集
-data = pd.read_csv('data.csv')
+data = pd.read_csv('../data/Data.csv')
 
 # 数据清洗和预处理
 stop_words = set(stopwords.words('chinese'))
@@ -24,4 +24,4 @@ data['label'] = le.fit_transform(data['标签'])
 
 # 保存预处理后的数据和标签编码器
 data.to_csv('processed_data.csv', index=False)
-joblib.dump(le, 'label_encoder.pkl')
+joblib.dump(le, '../models/label_encoder.pkl')

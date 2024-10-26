@@ -6,9 +6,9 @@ import os
 app = Flask(__name__)
 
 # 加载模型、向量化器和标签编码器
-best_model = joblib.load('sgd_model.pkl')
-vectorizer = joblib.load('vectorizer.pkl')
-le = joblib.load('label_encoder.pkl')
+best_model = joblib.load('../models/sgd_model.pkl')
+vectorizer = joblib.load('../models/vectorizer.pkl')
+le = joblib.load('../models/label_encoder.pkl')
 
 # 定义简单的 HTML 模板，添加了反馈功能
 TEMPLATE = '''
@@ -56,7 +56,7 @@ def feedback():
     feedback = request.form.get('feedback', '')
 
     # 将反馈数据保存到文件
-    feedback_file = 'feedback_data.csv'
+    feedback_file = '../data/feedback_data.csv'
     header = 'text,prediction,feedback\n'
     data_line = f'"{text}","{prediction}","{feedback}"\n'
 

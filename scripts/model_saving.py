@@ -4,6 +4,6 @@ import joblib
 # 这里只是确认一下保存的文件
 
 # 检查保存的模型和向量化器
-best_model = joblib.load('best_model.pkl')
-vectorizer = joblib.load('vectorizer.pkl')
-le = joblib.load('label_encoder.pkl')
+best_model = joblib.load('../models/best_model.pkl')
+vectorizer = joblib.load('../models/vectorizer.pkl')
+le = joblib.load('../models/label_encoder.pkl')
